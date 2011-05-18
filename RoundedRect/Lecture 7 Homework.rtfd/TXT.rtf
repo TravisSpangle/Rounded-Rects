@@ -1,0 +1,70 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww15940\viewh15180\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\b\fs32 \cf0 HOMEWORK\
+
+\b0\fs24 \
+
+\b HW 7\
+
+\b0 \
+For Homework 7 we will create an iPhone view that draws an image with a bordered, round-rectangle frame. The corner radius and line width of the frame will be adjustable by sliders in the user interface of the view\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 {{\NeXTGraphic Screen shot 2010-05-03 at 12.51.17 AM.png \width8280 \height15400
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+\cf0 For full points a solution will meet the following requirements:\
+\
+- Draws a round corner rectangle border around the image, with careful attention that the image corners are also rounded!\
+- A slider that adjusts the round rect border\'92s corner radius between 1.0 and 100.0\
+- A slider that adjusts the border\'92s line width between 0.0 and 20.0\
+- Draws a simulated drop shadow under the image and border that matches the shape of the round corner rectangle\
+\
+Additional Details :\
+\
+- Use any image you like\
+- You can draw the image with UIImage methods, you don\'92t have to CGImage methods\
+- Draw your border in any color you like\
+- Draw your shadow in any color you like, with any offset you like\
+\
+\
+Hints:\
+\
+- Set the clip of the graphics context to a round corner rect path to round the corners of the image\
+\
+- Don\'92t forget to save and restore the graphics state if you draw after changing the clip!\
+\
+- Create a round corner rectangle path using lines and arcs. \
+\
+- See Chapter 6, pg 114 of G&L for more on round rects\
+\
+- You will probably want to use the round rect path several times, so consider creating it as a CGPath Object\
+\
+- Think about painting order.  Which element needs to draw first? Which should draw last?\
+\
+- Don\'92t forget that you will need to call setNeedsDisplay somewhere when you update the sliders\
+\
+- The drop shadow is simply the round-rect shape of the image+border drawn offset by a few pixels\
+\
+- The simulated drop shadow is best done by drawing the rounded-rect path with a dark gray color with some transparency (alpha value less than \
+1.0) .Real drop shadows have a \'91blur\'92 but don\'92t worry about that!\
+\
+- Its tricky to make the drop shadow the same shape as the image + the border! Just try your best to get it as close as possible. \
+\
+- Don\'92t forget that transforms apply the the context. You have to undo the effect of transforms with an inverted transform or by saving and restoring \
+the graphics state.\
+\
+- If you use a scale transform, don\'92t forget it scales around the origin. You may need to translate to scale around the center you want. \
+- ORDER MATTERS WHEN CONCATENATING TRANSFORMS!\
+\
+
+\b Installing the Simulator Build\
+\
+
+\b0 To install copy the folder 'HW7 - Debug - Simulator' into /Users/<your user>/Library/Application Support/iPhone Simulator/4.3/Applications\
+\
+To run, launch the simulator and make sure the version of the simulator is 4.3 You can change this under the 'Hardware' menu item in the simulator. }
