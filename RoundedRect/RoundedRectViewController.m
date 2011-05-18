@@ -46,4 +46,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+- (IBAction) cornerChanged: (UISlider *) cornerSlider;
+{
+    NSLog(@"Changing corner value: %f",[cornerSlider value]);
+}
+- (IBAction) widthChanged: (UISlider *) widthSlider;
+{
+    NSLog(@"Changed width value: %f",[widthSlider value]);
+}
 @end

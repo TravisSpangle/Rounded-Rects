@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RoundedRectViewController : UIViewController {
-    
+
 }
+
+- (IBAction) cornerChanged: (UISlider *) cornerSlider;
+- (IBAction) widthChanged: (UISlider *) widthSlider;
 
 @end
