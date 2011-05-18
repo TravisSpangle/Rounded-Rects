@@ -7,13 +7,9 @@
 //
 
 #import "RoundedRectViewController.h"
+#import "DrawRoundRect.h"
 
 @implementation RoundedRectViewController
-
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -25,19 +21,22 @@
 
 #pragma mark - View lifecycle
 
-/*
+-(void) loadView
+{
+    self.view = [[[DrawRoundRect alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)] autorelease];
+    self.view.backgroundColor = [UIColor grayColor];
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
-*/
+
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -53,6 +52,6 @@
 }
 - (IBAction) widthChanged: (UISlider *) widthSlider;
 {
-    NSLog(@"Changed width value: %f",[widthSlider value]);
+   NSLog(@"Changed width value: %f",[widthSlider value]);
 }
 @end
