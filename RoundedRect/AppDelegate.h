@@ -10,7 +10,7 @@
 
 @class RoundedRectViewController;
 
-@interface RoundedRectAppDelegate : NSObject <UIApplicationDelegate> {
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
 
 }
 

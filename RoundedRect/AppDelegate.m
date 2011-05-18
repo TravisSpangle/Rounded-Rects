@@ -6,11 +6,11 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RoundedRectAppDelegate.h"
+#import "AppDelegate.h"
 
 #import "RoundedRectViewController.h"
 
-@implementation RoundedRectAppDelegate
+@implementation AppDelegate
 
 
 @synthesize window=_window;
