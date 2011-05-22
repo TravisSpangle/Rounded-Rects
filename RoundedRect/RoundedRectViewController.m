@@ -11,6 +11,8 @@
 
 @implementation RoundedRectViewController
 
+@synthesize roundedRect;
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -20,22 +22,31 @@
 }
 
 #pragma mark - View lifecycle
+- (id)init {
+    self = [super init];
+    if (self) {
 
--(void) loadView
-{
-    self.view = [[[DrawRoundRect alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)] autorelease];
-    self.view.backgroundColor = [UIColor grayColor];
+    }
+    return self;
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    //DrawRoundRect is my UIView and roundedRect will be my instance of it.
+    //  I call it with a frame that starts at position x:0 and y:0.
+    //  Then give it the appropriate width and height so it doesn't overlap my sliders.
+    roundedRect = [[DrawRoundRect alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 360.0)];
+    roundedRect.backgroundColor = [UIColor clearColor]; //clear color is we see the background of my UIView Controller Class
+    [self.view addSubview:roundedRect]; //Adding it as a subview.
     [super viewDidLoad];
 }
 
 
 - (void)viewDidUnload
 {
+    [roundedRect release];
+    roundedRect = nil;
+    
     [super viewDidUnload];
 }
 
@@ -48,10 +59,17 @@
 
 - (IBAction) cornerChanged: (UISlider *) cornerSlider;
 {
-    NSLog(@"Changing corner value: %f",[cornerSlider value]);
+    roundedRect.radius = [cornerSlider value];
+    [roundedRect setNeedsDisplay];    
 }
+
+//This action is tied to my width slider. It's called whenever the slider changes values and passes 
+    //in a refrence to itself.
 - (IBAction) widthChanged: (UISlider *) widthSlider;
 {
-   NSLog(@"Changed width value: %f",[widthSlider value]);
+    //Sets the width property on my UIView
+    roundedRect.width = [widthSlider value];
+    //Asks the UIView to redraw itself
+    [roundedRect setNeedsDisplay];
 }
 @end

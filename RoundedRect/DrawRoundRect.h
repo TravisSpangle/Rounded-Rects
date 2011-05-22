@@ -10,7 +10,15 @@
 
 
 @interface DrawRoundRect : UIView {
+ 	CGImageRef image;  
     
+    CGFloat width;
+    CGFloat radius;
 }
+
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat radius;
+
+- (CGPathRef) newRoundedRectPath:(CGRect)bounds;
 
 @end

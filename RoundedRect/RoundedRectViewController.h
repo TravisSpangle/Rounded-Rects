@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RoundedRectViewController : UIViewController {
+@class DrawRoundRect;
 
+@interface RoundedRectViewController : UIViewController {
+    DrawRoundRect *roundedRect;
 }
+
+@property(nonatomic, retain) DrawRoundRect *roundedRect;
 
 - (IBAction) cornerChanged: (UISlider *) cornerSlider;
 - (IBAction) widthChanged: (UISlider *) widthSlider;
