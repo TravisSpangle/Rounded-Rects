@@ -11,6 +11,8 @@
 
 @implementation RoundedRectViewController
 
+@synthesize cornerSlider;
+@synthesize widthSlider;
 @synthesize roundedRect;
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +39,9 @@
     //  Then give it the appropriate width and height so it doesn't overlap my sliders.
     roundedRect = [[DrawRoundRect alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 360.0)];
     roundedRect.backgroundColor = [UIColor clearColor]; //clear color is we see the background of my UIView Controller Class
+    
+    roundedRect.width = widthSlider.value;
+    roundedRect.radius = cornerSlider.value;
     [self.view addSubview:roundedRect]; //Adding it as a subview.
     [super viewDidLoad];
 }
@@ -47,6 +52,8 @@
     [roundedRect release];
     roundedRect = nil;
     
+    [self setCornerSlider:nil];
+    [self setWidthSlider:nil];
     [super viewDidUnload];
 }
 
@@ -71,5 +78,10 @@
     roundedRect.width = [widthSlider value];
     //Asks the UIView to redraw itself
     [roundedRect setNeedsDisplay];
+}
+- (void)dealloc {
+    [cornerSlider release];
+    [widthSlider release];
+    [super dealloc];
 }
 @end

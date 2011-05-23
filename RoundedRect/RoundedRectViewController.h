@@ -12,7 +12,11 @@
 
 @interface RoundedRectViewController : UIViewController {
     DrawRoundRect *roundedRect;
+    UISlider *cornerSlider;
+    UISlider *widthSlider;
 }
+@property (nonatomic, retain) IBOutlet UISlider *cornerSlider;
+@property (nonatomic, retain) IBOutlet UISlider *widthSlider;
 
 @property(nonatomic, retain) DrawRoundRect *roundedRect;
 
