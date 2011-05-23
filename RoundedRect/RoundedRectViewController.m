@@ -57,18 +57,19 @@
 }
 
 
-- (IBAction) cornerChanged: (UISlider *) cornerSlider;
+- (IBAction) cornerChanged;
 {
-    roundedRect.radius = [cornerSlider value];
+//    roundedRect.radius = [cornerSlider value];
+    roundedRect.radius = cornerSlider.value;
     [roundedRect setNeedsDisplay];    
 }
 
 //This action is tied to my width slider. It's called whenever the slider changes values and passes 
     //in a refrence to itself.
-- (IBAction) widthChanged: (UISlider *) widthSlider;
+- (IBAction) widthChanged;
 {
     //Sets the width property on my UIView
-    roundedRect.width = [widthSlider value];
+    roundedRect.width = widthSlider.value;
     //Asks the UIView to redraw itself
     [roundedRect setNeedsDisplay];
 }

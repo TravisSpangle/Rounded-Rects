@@ -20,7 +20,7 @@
 
 @property(nonatomic, retain) DrawRoundRect *roundedRect;
 
-- (IBAction) cornerChanged: (UISlider *) cornerSlider;
-- (IBAction) widthChanged: (UISlider *) widthSlider;
+- (IBAction) cornerChanged;
+- (IBAction) widthChanged;
 
 @end
