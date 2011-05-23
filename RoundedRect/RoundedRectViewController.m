@@ -24,13 +24,6 @@
 }
 
 #pragma mark - View lifecycle
-- (id)init {
-    self = [super init];
-    if (self) {
-
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {

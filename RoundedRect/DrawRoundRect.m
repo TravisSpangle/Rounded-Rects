@@ -15,7 +15,6 @@
 
 -(id)initWithFrame:(CGRect)frame
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
 	self = [super initWithFrame:frame];
 	if(self != nil)
 	{
